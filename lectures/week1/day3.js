@@ -66,7 +66,7 @@ const shoppingList = Object.freeze([
     {id:9, itemName: "Soup Dumplings", price: 3.29, shops: ["Trader Joes"]},
     {id:2, itemName: "Air Ticket to Japan", price: 1400, shops: ["Expedia"]},
     {id:10, itemName: "Custard Tart", price: 3.99, shops: ["Trader Joes"]}
-])
+]);
 
 
 // -----.map & .filter-----
