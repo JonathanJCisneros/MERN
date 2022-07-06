@@ -161,6 +161,3 @@ console.log(sortedPrices)
 
 const sortedByName = [...shoppingList].sort((a, b) => a.itemName > b.itemName? 1: -1)
 console.log(sortedByName)
-
-
-// ------!!!INTRO TO REACT!!!-----
