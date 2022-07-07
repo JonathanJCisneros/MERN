@@ -10,10 +10,8 @@ export class PropsComponent extends Component {
             <h3>Title: {title}</h3>
             <h3>Episodes: {episodes}</h3>
             <h3>Is It Recommended? : {isRecommended?"Yes":"No"}</h3>
-            <h3>Hastags:</h3>
-                {hashtags.map((name) =>
-                    <li>#{name}</li>
-                )}
+            <h3>Hashtags:</h3>
+                {hashtags.map((name, i) => <li key={i}>#{name}</li>)}               
         </fieldset>
         )
     }
