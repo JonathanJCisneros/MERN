@@ -1,35 +1,29 @@
-// import React
 import React, { Component } from 'react'
 
-// define class
-export class StateComponent extends Component {
+export class MixComponents extends Component {
     constructor(props) {
         super(props)
-        this.state ={
+        this.state = {
             count : 0,
-            likes : this.props.propsLikes
+            likes : this.props.mixLikes
         }
     }
     addLikes = () => this.setState({likes : this.state.likes + 1});
 
     render() {
-        const alert2 = (message) => alert(message);
         return (
             <fieldset>
-                <legend>StateComponent.jsx</legend>
-                <h1>State Demo</h1>
-                <button onClick={()=>alert("Hi")}>Alert me!</button> 
-                <span>|</span> 
-                <button onClick={()=>alert2("Big LAUGH")}>Alert Test 2</button>
+                <legend>MixComponents</legend>
+                <h1>Mix Demo</h1>
+                <button onClick={() => alert("Hello")}>Alert me!</button> 
                 <p><button onClick={()=> this.setState({count: this.state.count + 1})}> Add Count</button></p>
                 <p><button onClick={this.addLikes}> Add Likes </button></p>
                 <h1>Count: {this.state.count}</h1>
                 <h1>Likes: {this.state.likes}</h1>
             </fieldset>
+        
         )
     }
 }
 
-
-// export
-export default StateComponent
+export default MixComponents

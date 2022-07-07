@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './PropsComponent.css'
 
 export class PropsComponent extends Component {
     render() {
@@ -9,7 +10,10 @@ export class PropsComponent extends Component {
             <h3>Title: {title}</h3>
             <h3>Episodes: {episodes}</h3>
             <h3>Is It Recommended? : {isRecommended?"Yes":"No"}</h3>
-            <h3>Hastags: {hashtags.map((name) => `#${name} `)}</h3>
+            <h3>Hastags:</h3>
+                {hashtags.map((name) =>
+                    <li>#{name}</li>
+                )}
         </fieldset>
         )
     }
