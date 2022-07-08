@@ -137,7 +137,7 @@ console.log(changePrice2(100,0.9))
 console.log(changePrice3(100,0.9))
 console.log(changePrice4(100,0.9))
 
-// --------Ternary Operators--------
+// --------Termary Operators--------
 // if or else statements
 let rating = 8
 if(rating>7){
