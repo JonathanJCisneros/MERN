@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import Display from './Display'
 
 const Form3 = () => {
     const [username, setUsername] = useState();
@@ -24,7 +23,7 @@ const Form3 = () => {
     const handleAge = (e) => {
         const valToUpdate = e.target.value
         setAge(e.target.value)
-        valToUpdate = 2? setAgeError(""):valToUpdate < 21? setAgeError("Should be at least 21 years of age"):setAgeError("")
+        valToUpdate = ""? setAgeError(""):valToUpdate < 21? setAgeError("Should be at least 21 years of age"):setAgeError("")
     }
 
     
