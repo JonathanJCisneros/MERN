@@ -4,16 +4,16 @@ import AddColor from './components/AddColor'
 import Display from './components/Display';
 
 function App() {
-  const [currentColor, setCurrentColor] = useState("Add a color")
+  const [currentList, setCurrentList] = useState([])
 
-  const changeColor = (newColor) => setCurrentColor(newColor);
+  const addBox = (newBox) => setCurrentList([...currentList, newBox]);
 
   return (
     <div className="App">
       <fieldset>
         <legend>App.jsx</legend>
-        <AddColor newColor={changeColor}/>
-        <Display color={currentColor}/>
+        <AddColor newBox={addBox}/>
+        <Display boxList={currentList}/>
       </fieldset>
     </div>
   );
