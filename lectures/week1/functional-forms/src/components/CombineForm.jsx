@@ -44,7 +44,7 @@ const CombineForm = () => {
     
     return (
         <fieldset>
-            <legend>ConbineForm.jsx</legend>
+            <legend>CombineForm.jsx</legend>
             <form onSubmit={handleSubmit}>
                 <p>
                     <label htmlFor="username">Username</label>
