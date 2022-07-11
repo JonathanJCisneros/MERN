@@ -7,10 +7,13 @@ function App() {
   const [todoList, setTodoList] = useState([])
 
   const addTodo = (newTodo) => setTodoList([...todoList, newTodo])
+
+  const updateList = (updatedList) => setTodoList(updatedList);
+
   return (
     <div className="App">
       <AddTodo newTodo={addTodo}/>
-      <DisplayTodo newList={todoList}/>
+      <DisplayTodo newList={todoList} onListUpdate={updateList}/>
     </div>
   );
 }
