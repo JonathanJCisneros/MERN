@@ -1,13 +1,15 @@
 
 import './App.css';
 import CallbackContainer from './views/CallbackContainer';
+import CompleteMessageBoard from './views/CompleteMessageBoard';
 import MessageBoard from './views/MessageBoard';
 
 function App() {
   return (
     <div className="App">
-      <CallbackContainer />
-      <MessageBoard />
+      {/* <CallbackContainer />
+      <MessageBoard /> */}
+      <CompleteMessageBoard/>
     </div>
   );
 }
