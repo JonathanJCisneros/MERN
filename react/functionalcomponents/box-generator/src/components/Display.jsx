@@ -5,7 +5,9 @@ const Display = (props) => {
     return (
         <fieldset>
             <legend>Display.jsx</legend>
-                {boxList.map((box, i) => <div key={i} style={{backgroundColor: box.color, height: box.size + "px", width: box.size + "px", margin: "25px"}}></div>)}        
+                <div style={{display: "flex", flexWrap: "wrap"}}>
+                    {boxList.map((box, i) => <div key={i} style={{backgroundColor: box.color, height: box.size + "px", width: box.size + "px", margin: "25px"}}></div>)} 
+                </div>
         </fieldset>
     )
 }
