@@ -7,14 +7,8 @@ const AddTodo = (props) => {
     })
     const {todo} = formState;
 
-    const handleInput = (e) => {
-        const keyToUpdate = e.target.name
-        const valToUpdate = e.target.value
-        setFormState({
-            ...formState,
-            [keyToUpdate] : valToUpdate
-        })
-    }
+    const handleInput = (e) => setFormState({...formState,[e.target.name] : e.target.value});
+
 
     const handleSubmit = (e) => {
         e.preventDefault();

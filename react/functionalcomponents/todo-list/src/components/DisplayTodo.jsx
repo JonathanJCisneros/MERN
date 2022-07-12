@@ -23,10 +23,11 @@ const DisplayTodo = (props) => {
                 {
                     newList.map((item, i) => {
                     return (
-                    <pre key={i} style={item.complete? {textDecoration: "line-through"}:{textDecoration: "none"} }>{item.todo}
-                    <input type="checkbox" name="complete" checked={item.complete} onChange={e=>handleComplete(e, i)}/>
-                    <button onClick={(e) => handleDelete(i)}>Delete</button>
-                    </pre>)})
+                        <pre key={i} style={{textDecoration: item.complete? "line-through": "" }}>{item.todo}
+                        <input type="checkbox" name="complete" checked={item.complete} onChange={e=>handleComplete(e, i)}/>
+                        <button onClick={(e) => handleDelete(i)}>Delete</button>
+                        </pre>
+                    )})
                 }
             </ul>
         </fieldset>
