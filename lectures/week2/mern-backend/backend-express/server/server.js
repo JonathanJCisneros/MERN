@@ -12,7 +12,6 @@ const users = [
 ];
 
 // FULL CRUD:
-// make sure these lines are above any app.get or app.post code blocks
 
 app.use( express.json() );
 // recognize JSON object
@@ -38,7 +37,7 @@ app.get("/api/users", (req, res)=> {
 })
 
 // READ ONE --- GET ONE ITEM
-app.get("api/users/:id", (req, res) => {
+app.get("/api/users/:id", (req, res) => {
     const idFromParams = req.params.id
     res.json(users[idFromParams])
 })
@@ -56,7 +55,7 @@ app.put("/api/users/:id", (req, res) => {
 // DELETE
 app.delete("/api/users/:id", (req,res) => {
     const idFromParams = req.params.id
-    users.splice(idFromParams,1)
+    users.splice(idFromParams, 1)
     res.json(users)
 })
 
