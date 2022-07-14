@@ -12,7 +12,7 @@ const users = [
 ];
 
 // FULL CRUD:
-
+// allows POST
 app.use( express.json() );
 // recognize JSON object
 
@@ -28,7 +28,7 @@ app.post("/api/users", (req,res) => {
 })
 
 
-// READ --- GET
+// READ --- GET ALL
 // app.get --> takes 2 arguements: (path, function(request, response))
 app.get("/api/users", (req, res)=> {
     // request: what is received from this call
