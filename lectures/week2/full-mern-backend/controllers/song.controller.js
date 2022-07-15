@@ -13,7 +13,7 @@ module.exports= {
     },
 
     oneSong : (req, res) => {
-    Song.findOne({_id : req.params.id})
+    Song.findOne(req.params)
         .then(oneSong => res.json(oneSong))
         .catch(err => res.json(err))
     },
@@ -25,13 +25,13 @@ module.exports= {
     },
 
     updateSong : (req, res) => {
-    Song.updateSong({_id : req.params.id}, req.body, {new : true, runValidators : true})
+    Song.updateOne(req.params, req.body, {new : true, runValidators : true})
         .then(updatedSong => res.json(updatedSong))
         .catch(err => res.json(err))
     },
 
     deleteSong : (req, res) => {
-    Song.deleteOne({_id : req.params.id})
+    Song.deleteOne(req.params)
         .then(message => res.json(message))
         .catch(err => res.json(err))
     }
