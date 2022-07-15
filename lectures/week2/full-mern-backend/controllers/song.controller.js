@@ -3,36 +3,42 @@ const Song = require('../models/song.model')
 module.exports = {
 
     testApi : (req, res) => {
-    res.json({Status: "ok"})
+        res.json({Status: "ok"})
     },
 
     allSongs : (req, res) => {
-    Song.find()
-        .then(songs => res.json(songs))
-        .catch(err => res.json(err))
+        Song.find()
+            .then(songs => res.json(songs))
+            .catch(err => res.json(err))
     },
 
     oneSong : (req, res) => {
-    Song.findOne(req.params)
-        .then(oneSong => res.json(oneSong))
-        .catch(err => res.json(err))
+        Song.findOne(req.params)
+            .then(oneSong => res.json(oneSong))
+            .catch(err => res.json(err))
+    },
+
+    songByArtist : (req, res) => {
+        Song.findOne({artist : req.params.artist})
+            .then(song => res.json(song))
+            .catch(err => res.json(err))
     },
 
     createSong : (req, res) => {
-    Song.create(req.body)
-        .then(song => res.json(song))
-        .catch(err => res.json(err))
+        Song.create(req.body)
+            .then(song => res.json(song))
+            .catch(err => res.json(err))
     },
 
     updateSong : (req, res) => {
-    Song.updateOne(req.params, req.body, {new : true, runValidators : true})
-        .then(updatedSong => res.json(updatedSong))
-        .catch(err => res.json(err))
+        Song.updateOne(req.params, req.body, {new : true, runValidators : true})
+            .then(updatedSong => res.json(updatedSong))
+            .catch(err => res.json(err))
     },
 
     deleteSong : (req, res) => {
-    Song.deleteOne(req.params)
-        .then(message => res.json(message))
-        .catch(err => res.json(err))
+        Song.deleteOne(req.params)
+            .then(message => res.json(message))
+            .catch(err => res.json(err))
     }
 }
