@@ -18,12 +18,6 @@ module.exports = {
             .catch(err => res.json(err))
     },
 
-    songByArtist : (req, res) => {
-        Song.findOne({artist : req.params.artist})
-            .then(song => res.json(song))
-            .catch(err => res.json(err))
-    },
-
     createSong : (req, res) => {
         Song.create(req.body)
             .then(song => res.json(song))
