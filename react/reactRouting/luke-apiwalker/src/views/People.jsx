@@ -21,8 +21,7 @@ const People = () => {
                     <h1>{person.name}</h1>
                     <h3>Eye Color: {person.eye_color}</h3>
                     <h3>Hair Color: {person.hair_color}</h3>
-                    <h3>Weight: {person.mass.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-}kg</h3>
+                    <h3>Weight: {person.mass.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}kg</h3>
                     <p>Home World: <a href={person.homeworld} target='_blank'>View</a></p>
                 </div>:
                 <div>
