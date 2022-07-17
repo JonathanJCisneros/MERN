@@ -16,11 +16,15 @@ const Main = (props) => {
             .catch(err => console.log(err))
     }, [])
 
+    const removeFromDom = id => {
+        setPeople(people.filter(person => person._id !== id));
+    }
+
     return (
         <div>
             <PersonForm/>
             <hr/>
-            {loaded && <PersonList people={people}/>}
+            {loaded && <PersonList people={people} removeFromDom={removeFromDom}/>}
         </div>
     )
 }
