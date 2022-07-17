@@ -9,5 +9,17 @@ module.exports = {
         Person.create({firstName, lastName})
             .then(person => res.json(person))
             .catch(err => res.json(err))
+    },
+
+    getAllPeople : (req, res) => {
+        Person.find()
+            .then(people => res.json(people))
+            .catch(err => res.json(err))
+    },
+
+    getPerson : (req, res) => {
+        Person.findOne(req.params)
+            .then(person => res.json(person))
+            .catch(err => res.json(err))
     }
 }
