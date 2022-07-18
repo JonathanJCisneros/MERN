@@ -27,6 +27,7 @@ const Main = () => {
 
     return (
         <div>
+            <h1>Name Dashboard</h1>
             <PersonForm onSubmitProp={createPerson} initialFirstName="" initialLastName=""/>
             <hr/>
             {loaded && <PersonList people={people} removeFromDom={removeFromDom}/>}

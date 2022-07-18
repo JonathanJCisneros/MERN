@@ -5,6 +5,7 @@ const PersonForm = (props) => {
     const [firstName, setFirstName] = useState(initialFirstName)
     const [lastName, setLastName] = useState(initialLastName)
 
+
     const submit = (e) => {
         e.preventDefault();
         onSubmitProp({firstName, lastName});
