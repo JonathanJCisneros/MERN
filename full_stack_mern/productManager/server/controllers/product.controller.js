@@ -21,5 +21,17 @@ module.exports = {
         Product.create({title, price, description})
             .then(product => res.json(product))
             .catch(err => res.json(err))
+    },
+
+    updateProduct : (req, res) => {
+        Product.findOneAndUpdate(req.params, req.body, {new : true})
+            .then(update => res.json(update))
+            .catch(err => res.json(err))
+    },
+
+    deleteProduct : (req, res) => {
+        Product.deleteOne(req.params)
+            .then(deleteConfirm => res.json(deleteConfirm))
+            .catch(err => res.json(err))
     }
 }

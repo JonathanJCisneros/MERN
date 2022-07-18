@@ -17,7 +17,7 @@ const PersonList = (props) => {
                 <p key={i}>
                     <Link to={`/${person._id}`}>{person.lastName}, {person.firstName}</Link>
                     |
-                    <button onClick={(e)=>{deletePerson(person._id)}}>Delete</button>
+                    <button onClick={(e)=>deletePerson(person._id)}>Delete</button>
                 </p>
             )}
         </div>
