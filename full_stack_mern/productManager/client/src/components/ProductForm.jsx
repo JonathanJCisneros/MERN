@@ -1,8 +1,7 @@
 import React, {useState} from 'react'
-import axios from 'axios'
 
 const ProductForm = (props) => {
-    const {initialTitle, initialPrice, initialDescription, submitProp} = props;
+    const {initialTitle, initialPrice, initialDescription, submitProp, operation} = props;
     const [title, setTitle] = useState(initialTitle)
     const [price, setPrice] = useState(initialPrice)
     const [description, setDescription] = useState(initialDescription)
@@ -28,7 +27,7 @@ const ProductForm = (props) => {
                 <textarea name="description" id="description" cols="30" rows="5" onChange={(e) => setDescription(e.target.value)} value={description}>Product Description</textarea>
             </p>
             <br />
-            <button type='submit'>Create</button>
+            <button type='submit'>{operation}</button>
         </form>
     )
 }

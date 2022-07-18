@@ -24,9 +24,7 @@ const Update = () => {
     return (
         <div>
             <h1>Update a Person</h1>
-            {person&& (
-                <PersonForm onSubmitProp={updatePerson} initialFirstName={person.firstName} initialLastName={person.lastName}/>
-            )}
+            {person&& <PersonForm onSubmitProp={updatePerson} initialFirstName={person.firstName} initialLastName={person.lastName}/>}
         </div>
     )
 }
