@@ -1,37 +1,25 @@
-import React, {useEffect, useState} from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import React, {useState} from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
-
-const Update = () => {
+const CreateFormUpdate = (props) => {
     const [title, setTitle] = useState("")
     const [artist, setArtist] = useState("")
     const [rating, setRating] = useState("") 
 
-    const {_id} = useParams();
     const navigate = useNavigate()
-
-    useEffect(() => {
-        axios.get(`http://localhost:8000/api/songs/${_id}`)
-            .then(res => {
-                setTitle(res.data.title)
-                setArtist(res.data.artist)
-                setRating(res.data.rating)
-            })
-            .catch(err => console.log(err))
-    }, [])
-
+    
     const submit = (e) => {
         e.preventDefault()
-        axios.put(`http://localhost:8000/api/songs/${_id}`, {title, artist, rating})
-            .then(res => navigate("/2"))
+        axios.post(`http://localhost:8000/api/songs`, {title, artist, rating})
+            .then(res => props.updateList(res.data))
             .catch(err => console.log(err))
         
     }
 
     return (
         <fieldset>
-            <legend>Update.jsx</legend>
+            <legend>CreateForm.jsx</legend>
             <form onSubmit={submit}>
                 <div>
                     <label htmlFor="title">Title  </label>
@@ -51,4 +39,4 @@ const Update = () => {
     )
 }
 
-export default Update
+export default CreateFormUpdate

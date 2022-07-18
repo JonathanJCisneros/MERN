@@ -5,6 +5,8 @@ import Create from './views/Create';
 import Details from './views/Details';
 import Update from './views/Update';
 import Test from './views/Test';
+import Main from './views/Main';
+import Main2 from './views/main2';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
       </p>
       <Routes>
         <Route path="/test" element={<Test/>}/>
+        <Route path="/" element={<Main/>}/>
+        <Route path="/2" element={<Main2/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
         <Route path="/songs/new" element={<Create/>}/>
         <Route path="/songs/:_id" element={<Details/>}/>

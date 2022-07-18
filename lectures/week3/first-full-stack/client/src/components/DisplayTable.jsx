@@ -1,14 +1,9 @@
-import React, {useEffect, useState} from 'react'
-import axios from 'axios'
+import React from 'react'
+import { Link } from 'react-router-dom';
 
-const DisplayTable = () => {
-    const [songList, setSongList] = useState([])
-
-    useEffect(() => {
-        axios.get(`http://localhost:8000/api/songs`)
-            .then(res => setSongList(res.data))
-            .catch(err => console.log(err))
-    })
+const DisplayTable = (props) => {
+    const {songList} = props;
+    
     return (
         <fieldset>
             <legend>DisplayTable.jsx</legend>
@@ -25,9 +20,10 @@ const DisplayTable = () => {
                         songList.map((song, i) => {
                             return (
                             <tr key={i}>
-                                <td>{song.title}</td>
+                                <td><Link to={`/songs/${song._id}`}>{song.title}</Link></td>
                                 <td>{song.artist}</td>
                                 <td>{song.rating}</td>
+                                <td><Link to={`/songs/${song._id}/edit`}>Edit</Link></td>
                             </tr>
                             )})
                     }

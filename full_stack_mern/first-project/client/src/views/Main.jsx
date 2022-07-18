@@ -16,7 +16,7 @@ const Main = () => {
             <h1>Name Dashboard</h1>
             <PersonForm onSubmitProp={createPerson} initialFirstName="" initialLastName=""/>
             <hr/>
-            <PersonList people={people}/>
+            {people&& <PersonList people={people}/>}
         </div>
     )
 }
