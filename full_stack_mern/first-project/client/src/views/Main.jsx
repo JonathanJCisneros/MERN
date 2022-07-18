@@ -3,7 +3,7 @@ import axios from 'axios'
 import PersonForm from '../components/PersonForm';
 import PersonList from '../components/PersonList';
 
-const Main = (props) => {
+const Main = () => {
     const [people, setPeople] = useState([]);
     const [loaded, setLoaded] = useState(false);
 
@@ -20,9 +20,14 @@ const Main = (props) => {
         setPeople(people.filter(person => person._id !== id));
     }
 
+    const createPerson = (person) => {
+        axios.post(`http://localhost:8000/api/people`, person)
+            .then(res => setPeople([...people, res.data]));
+    }
+
     return (
         <div>
-            <PersonForm/>
+            <PersonForm onSubmitProp={createPerson} initialFirstName="" initialLastName=""/>
             <hr/>
             {loaded && <PersonList people={people} removeFromDom={removeFromDom}/>}
         </div>

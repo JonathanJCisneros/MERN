@@ -1,15 +1,13 @@
 import React, {useState} from 'react'
-import axios from 'axios'
 
-const PersonForm = () => {
-    const [firstName, setFirstName] = useState("")
-    const [lastName, setLastName] = useState("")
+const PersonForm = (props) => {
+    const{initialFirstName, initialLastName, onSubmitProp} = props;
+    const [firstName, setFirstName] = useState(initialFirstName)
+    const [lastName, setLastName] = useState(initialLastName)
 
     const submit = (e) => {
         e.preventDefault();
-        axios.post(`http://localhost:8000/api/people`, {firstName, lastName})
-            .then(res => console.log("Response: ", res))
-            .catch(err => console.log("There was an Error: ", err))
+        onSubmitProp({firstName, lastName});
     }
 
     return (
