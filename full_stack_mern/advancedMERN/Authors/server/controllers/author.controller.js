@@ -25,7 +25,7 @@ module.exports = {
     updateAuthor : (req, res) => {
         Author.findOneAndUpdate(req.params, req.body, {new : true})
             .then(update => res.json(update))
-            .catch(err => res.json(err))
+            .catch(err => res.status(400).json(err))
     },
 
     deleteAuthor : (req, res) => {

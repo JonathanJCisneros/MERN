@@ -8,8 +8,6 @@ const ListAllProducts = (props) => {
     const {products, removeFromDom} = props;
     
 
-    
-
     const deleteProduct = (id) =>{
         axios.delete(`http://localhost:8000/api/product/${id}`)
         .then(res => removeFromDom(id))

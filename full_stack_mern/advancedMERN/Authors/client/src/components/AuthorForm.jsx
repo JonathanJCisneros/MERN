@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 const AuthorForm = (props) => {
-    const {initialValue, operator, onSubmitProp} = props;
+    const {initialValue, operator, onSubmitProp, error} = props;
     const [name, setName] = useState(initialValue)
 
     const submitHandler = (e) => {
@@ -15,6 +15,7 @@ const AuthorForm = (props) => {
                 <div>
                     <label htmlFor="name">Name  </label>
                     <input type="text" name='name' onChange={e => setName(e.target.value)} value={name}/>
+                    {error&& <p style={{color : "red", fontWeight: "bold"}}>{error}</p>}
                 </div>
                 <button type='submit'>{operator}</button>
             </form>
