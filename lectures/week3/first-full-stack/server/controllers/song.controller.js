@@ -21,7 +21,7 @@ module.exports = {
     createSong : (req, res) => {
         Song.create(req.body)
             .then(song => res.json(song))
-            .catch(err => res.json(err))
+            .catch(err => res.status(400).json(err))
     },
 
     updateSong : (req, res) => {
