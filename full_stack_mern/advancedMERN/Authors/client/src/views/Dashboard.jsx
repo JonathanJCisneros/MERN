@@ -9,7 +9,6 @@ const Dashboard = () => {
             <Link to={'/new'}>Add An Author</Link>
             <AuthorList/>
         </div>
-        
     )
 }
 

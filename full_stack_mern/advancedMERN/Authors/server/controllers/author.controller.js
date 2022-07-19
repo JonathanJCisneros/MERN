@@ -23,7 +23,7 @@ module.exports = {
     },
 
     updateAuthor : (req, res) => {
-        Author.findOneAndUpdate(req.params, req.body, {new : true})
+        Author.findOneAndUpdate(req.params, req.body, {new : true, runValidators: true})
             .then(update => res.json(update))
             .catch(err => res.status(400).json(err))
     },
