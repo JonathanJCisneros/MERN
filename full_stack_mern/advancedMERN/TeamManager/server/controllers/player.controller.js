@@ -21,9 +21,9 @@ module.exports = {
     },
 
     updatePlayer : (req, res) => {
-        Player.findOneandUpdate(req.params, req.body, {new : true, runValidators : true})
+        Player.findOneAndUpdate(req.params, req.body, {new : true})
             .then(update => res.json(update))
-            .catch(err => res.status(400).json(err))
+            .catch(err => res.json(err))
     },
 
     deletePlayer : (req, res) => {
