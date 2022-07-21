@@ -13,6 +13,7 @@ company : {
 },
 salary : {
     type : Number,
+    required : [true, "Salary is required"],
     min : [70000, "Salary must be at least $70,000"],
 },
 isRemote : Boolean
