@@ -35,7 +35,6 @@ const Details = () => {
                     </div>
                     <br />
                     <button className='btn btn-secondary' onClick={() => navigate(-1)}>Back</button>
-                    
                 </>}
         </div>
     )
