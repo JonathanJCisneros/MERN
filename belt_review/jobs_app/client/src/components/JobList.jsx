@@ -33,7 +33,7 @@ const JobList = () => {
                     return (<tr key={i}>
                         <td><Link to={`/jobs/${job._id}`}>{job.title}</Link></td>
                         <td>{job.company}</td>
-                        <td>${job.salary}</td>
+                        <td>${job.salary.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
                         <td>{job.isRemote === true? "Yes": "No"}</td>
                         <td>
                             <button className='btn btn-secondary' onClick={()=> edit(job._id)}>Edit</button>
