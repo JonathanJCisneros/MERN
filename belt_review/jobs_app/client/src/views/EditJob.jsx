@@ -30,6 +30,7 @@ const EditJob = () => {
             {job&& 
             <div>
                 <Form initialTitle={job.title} initialCompany={job.company} initialSalary={job.salary} initialIsRemote={job.isRemote} operator="Update Job" onSubmitProp={updateJob} errors={errors}/>
+                <br />
                 <DeleteButton id={job._id} callback={redirect}/>
             </div>
             }
