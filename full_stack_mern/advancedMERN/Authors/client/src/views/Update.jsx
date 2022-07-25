@@ -25,7 +25,7 @@ const Update = () => {
         <div>
             <h1>Update Author</h1>
             <Link to={'/'}>Home</Link>
-            {author&& <AuthorForm initialValue={author.name} operator="Update" onSubmitProp={updateAuthor} error={error}/>}
+            {author&& <AuthorForm authorName={author.name} operator="Update" onSubmitProp={updateAuthor} error={error}/>}
         </div>
     )
 }

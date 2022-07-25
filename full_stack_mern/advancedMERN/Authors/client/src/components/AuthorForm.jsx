@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 
 const AuthorForm = (props) => {
-    const {initialValue, operator, onSubmitProp, error} = props;
-    const [name, setName] = useState(initialValue)
+    const {authorName, operator, onSubmitProp, error} = props;
+    const [name, setName] = useState(authorName)
 
     const submitHandler = (e) => {
         e.preventDefault()

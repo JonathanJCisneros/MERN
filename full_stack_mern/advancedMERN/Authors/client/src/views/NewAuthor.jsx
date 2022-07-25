@@ -18,7 +18,7 @@ const NewAuthor = () => {
         <div>
             <h1>Add New Author</h1>
             <Link to={'/'}>Home</Link>
-            <AuthorForm initialValue="" operator="Add Author" onSubmitProp={createAuthor} error={error}/>
+            <AuthorForm authorName="" operator="Add Author" onSubmitProp={createAuthor} error={error}/>
         </div>
     )
 }
