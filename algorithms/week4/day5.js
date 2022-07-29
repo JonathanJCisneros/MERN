@@ -40,7 +40,7 @@ const expected3 = [-1, -1]; // not found.
  */
 function amazonMusicRuntime(busDuration, songDurations) {
     let longest = 0
-    let expected = []
+    let expected = [-1,-1]
     for(var i = 0; i < songDurations.length; i++){
         if(songDurations[longest] < songDurations[i] && longest !== i){
             longest = i
@@ -48,7 +48,7 @@ function amazonMusicRuntime(busDuration, songDurations) {
     }
     for(var j = 0; j < songDurations.length; j++){
         if(songDurations[longest] + songDurations[j] === (busDuration - 30) && longest !== j){
-            expected.push(longest, j)
+            expected = [longest, j]
         }
     }
     return expected
